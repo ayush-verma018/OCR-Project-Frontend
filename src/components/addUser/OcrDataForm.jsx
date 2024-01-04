@@ -1,54 +1,14 @@
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const OcrDataForm = (imgdata) => {
   useEffect(() => {
     console.log(imgdata);
   }, [imgdata]);
-  //Object is defined to decide the format of data to be recieved as state
-  const userData = {
-    idNumber: "",
-    fname: "",
-    lname: "",
-    doBirth: "",
-    doIssue: "",
-    doExpiry: "",
-  };
+
   const navigate = useNavigate();
-  const [user, setUser] = useState(userData);
-
-  //this will set the user data according to the input in the input tabs
-  const inputIdHandler = () => {
-    const { idNumber, value } = value;
-    setUser({ ...user, [idNumber]: value });
-  };
-
-  const inputFnameHandler = (e) => {
-    const { fname, value } = e.target;
-    setUser({ ...user, [fname]: value });
-  };
-
-  const inputLnameHandler = (e) => {
-    const { lname, value } = e.target;
-    setUser({ ...user, [lname]: value });
-  };
-
-  const inputBirthHandler = (e) => {
-    const { fname, value } = e.target;
-    setUser({ ...user, [fname]: value });
-  };
-
-  const inputIssueHandler = (e) => {
-    const { fname, value } = e.target;
-    setUser({ ...user, [fname]: value });
-  };
-
-  const inputExpiryHandler = (e) => {
-    const { fname, value } = e.target;
-    setUser({ ...user, [fname]: value });
-  };
 
   //this will submit the form and update the data of the user according to the id and the data filled in input tabs
   const submitForm = async (e) => {
@@ -74,7 +34,6 @@ const OcrDataForm = (imgdata) => {
           </label>
           <input
             type="text"
-            onChange={inputIdHandler}
             id="idNumber"
             name="idNumber"
             value={imgdata?.imgdata?.idNumber}
@@ -91,7 +50,6 @@ const OcrDataForm = (imgdata) => {
           </label>
           <input
             type="text"
-            onChange={inputFnameHandler}
             id="fname"
             name="fname"
             value={imgdata?.imgdata?.fname}
@@ -108,7 +66,6 @@ const OcrDataForm = (imgdata) => {
           </label>
           <input
             type="text"
-            onChange={inputLnameHandler}
             id="lname"
             name="lname"
             value={imgdata.imgdata.lname}
@@ -125,7 +82,6 @@ const OcrDataForm = (imgdata) => {
           </label>
           <input
             type="text"
-            onChange={inputBirthHandler}
             id="doBirth"
             name="doBirth"
             value={imgdata.imgdata.doBirth}
@@ -142,7 +98,6 @@ const OcrDataForm = (imgdata) => {
           </label>
           <input
             type="text"
-            onChange={inputIssueHandler}
             id="doIssue"
             name="doIssue"
             value={imgdata.imgdata.doIssue}
@@ -159,7 +114,6 @@ const OcrDataForm = (imgdata) => {
           </label>
           <input
             type="text"
-            onChange={inputExpiryHandler}
             id="doExpiry"
             name="doExpiry"
             value={imgdata.imgdata.doExpiry}

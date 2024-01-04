@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import OcrDataForm from "./OcrDataForm";
-import PhotoUploadCard from "./PhotoUploadCard";
 import axios from "axios";
 
 const OcrPage = () => {
@@ -27,7 +26,9 @@ const OcrPage = () => {
       <div className="flex gap-8 align-center my-4 mx-4">
         {/* Left side: Photo Upload Card */}
         <div className="w-1/2 p-4 bg-blue-400 rounded-md">
-          <h2 className="text-2xl text-white font-bold mb-4">Photo Upload</h2>
+          <h2 className="text-2xl text-white font-bold mb-4">
+            Photo Upload Link
+          </h2>
           {/* <PhotoUploadCard imgdata={data} setImgData={setData} /> */}
           <div className="flex-vertical">
             <div className="flex gap-2">
@@ -53,16 +54,12 @@ const OcrPage = () => {
               <h2 className="text-white text-2xl font-bold my-4">
                 Extracted Data
               </h2>
-              <div
-                className={`bg-white p-2 rounded-xl ${
-                  data === "" ? "h-32" : "h-auto"
-                }`}
-              >
+              <div className={`bg-white p-2 rounded-xl h-48 overflow-auto`}>
                 {JSON.stringify(data.user) || ""}
               </div>
               <button
                 onClick={getFormData}
-                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 mx-2 rounded"
+                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 mt-4  rounded"
               >
                 Get
               </button>
