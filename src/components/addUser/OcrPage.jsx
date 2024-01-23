@@ -47,7 +47,10 @@ const OcrPage = () => {
             </div>
 
             <p className="text-gray-900 text-sm">
-              Upload a photo for OCR processing.
+              Upload a photo for OCR processing.(any Thai ID Card Image with good quality)
+            </p>
+            <p className="text-gray-900 text-sm">
+              Sample Link : https://pbs.twimg.com/media/FkcR718VEAAMEtL.jpg:large (use after deleting duplicate record from the table).
             </p>
 
             <div>
